@@ -15,19 +15,19 @@ const UserItem = (props) => {
     return (
         <div className={cl.user}>
             <div className={cl.box_left}>
-                <img src={props.users.img} alt="photo user" className={cl.img} />
+                <img src={props.users.photos.small == null? 'https://prepsec.org/wp-content/uploads/2017/09/unknown-person-icon-Image-from.png': props.users.phtos.small} alt="photo user" className={cl.img} />
                 <Button className={cl.buttonUser} onClick={changeFollow}>{props.users.followed ? 'Unfollow': 'Follow'}</Button>
             </div>
             <div className={cl.box_right}>
                 <div className={cl.about}>
-                    <div className={cl.name}>{props.users.fullName}</div>
-                    <div className={cl.status}>{props.users.status}</div>
+                    <div className={cl.name}>{props.users.name}</div>
+                    <div className={cl.status}>{props.users.status == null? 'Здесь место для статуса': props.users.status}</div>
                 </div>
 
-                <div className={cl.location}>
+                {/* <div className={cl.location}>
                     <div className={cl.country}>{props.users.location.country}</div>
                     <div className={cl.city}>{props.users.location.city}</div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
