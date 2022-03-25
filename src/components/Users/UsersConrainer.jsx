@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { followAC, setUsersAC, unfollowAC } from '../../redux/users_reducer';
-import Users from './Users';
+import UsersC from './Users';
+
+
 
 const mapStateToProps = (state) => {
     return {
@@ -22,7 +24,7 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-const UsersConrainer = connect(mapStateToProps, mapDispatchToProps)(Users)
+const UsersConrainer = connect(mapStateToProps, mapDispatchToProps)(UsersC)
 
 
 export default UsersConrainer;
