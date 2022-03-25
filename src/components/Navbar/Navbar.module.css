@@ -18,6 +18,10 @@
     margin-bottom: 5px;
   }
   
+  .addMargin {
+    margin-top: 15px
+  }
+
   .nav__item a {
     text-decoration: none;
     color: var(--main-color);

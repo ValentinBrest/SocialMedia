@@ -3,9 +3,9 @@ import cl from './Button.module.css'
 
 
 
-const Button = ({children, ...props}) => {
+const Button = ({children, className, ...props}) => {
     return (
-        <button {...props} className={cl.button}>
+        <button  className={`${cl.button} ${className}`} {...props}>
             {children}
         </button>
     );

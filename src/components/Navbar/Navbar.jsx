@@ -2,26 +2,26 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import cl from './Navbar.module.css'
 
+const navBarLink = [
+	{link: 'profile', linkName: 'Profile', id: 1},
+	{link: 'dialogs', linkName: 'Messages', id: 2},
+	{link: 'groupes', linkName: 'Groupes', id: 3},
+	{link: 'music', linkName: 'Music', id: 4},
+	{link: 'users', linkName: 'Find User', id: 5, addMargin: true},
+	{link: 'settings', linkName: 'Settings', id: 6, addMargin: true},
+]
+
 const Navbar = () => {
     return (
         <nav className={cl.nav}>
 				<ul className={cl.nav__wrap}>
-					<li className={cl.nav__item}>
-						<NavLink  className={({ isActive }) => isActive ? cl.active : ""} to="profile">Profile</NavLink>
-					</li>
-					<li className={cl.nav__item}>
-						<NavLink className={({ isActive }) => isActive ? cl.active : ""} to="dialogs">Messages</NavLink>
-					</li>
-					<li className={cl.nav__item}>
-						<NavLink className={({ isActive }) => isActive ? cl.active : ""}  to="groupes">Groupes</NavLink>
-					</li>
-					<li className={cl.nav__item}>
-						<NavLink className={({ isActive }) => isActive ? cl.active : ""}  to="music">Music</NavLink>
-					</li>
-					<br />
-					<li className={cl.nav__item}>
-						<NavLink className={({ isActive }) => isActive ? cl.active : ""}  to="settings">Settings</NavLink>
-					</li>
+				{
+					navBarLink.map(link => 
+						<li className={(link.addMargin ? `${cl.nav__item} ${cl.addMargin}`:cl.nav__item)} key={link.id}>
+							<NavLink  className={({ isActive }) => isActive ? cl.active : ""} to={link.link}>{link.linkName}</NavLink>
+						</li>
+					)
+				}
 				</ul>
         </nav>
     );
