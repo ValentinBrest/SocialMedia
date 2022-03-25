@@ -1,0 +1,73 @@
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 180px;
+    box-shadow: 4px 4px 19px 0px rgba(34, 60, 80, 0.2);
+}
+
+.box_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 200px;
+    padding: 10px;
+    background-color: aqua;
+}
+
+.box_right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.img {
+    border-radius: 50%;
+    width: 110px;
+    object-fit: cover;
+}
+
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name{
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.status {
+    margin-top: 5px;
+    text-indent: 20px;
+}
+
+
+.location {
+    position: absolute;
+    bottom: 35px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.country {
+    text-align: end;
+}
+
+.city {
+    text-align: end;
+}
+
+.buttonUser {
+    font-size: 14px;
+    width: 100px;
+}

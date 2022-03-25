@@ -1,0 +1,11 @@
+.title {
+    margin-left: 20px;
+    padding-bottom: 10px;
+    opacity: .8;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
