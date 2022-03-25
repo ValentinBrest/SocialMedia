@@ -1,0 +1,23 @@
+.header {
+    grid-area: header;
+    background: var(--color-header);
+    position: relative;
+  }
+  
+.header__wrap {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.header__wrap span {
+    font-size: 30px;
+}
+
+.header img {
+    width: 50px;
+    display: block;
+  }

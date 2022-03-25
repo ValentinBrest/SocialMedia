@@ -1,0 +1,20 @@
+.persons {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    text-decoration: none;
+}
+
+
+.person__name {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #eee
+}
+
+.img__person {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}

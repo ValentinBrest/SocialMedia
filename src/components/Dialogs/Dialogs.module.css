@@ -1,0 +1,54 @@
+.dialogs {
+    
+}
+
+.dialogs__wrap {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    height: 600px;
+}
+
+.dialog__person {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+    max-height: 600px;
+    background-color: var(--color-person);
+}
+
+.dialog__message {
+    display: flex;
+    flex-direction: column;
+    max-height: 600px;
+    background: var(--color-message);
+    justify-content: space-between;
+}
+
+.dialog__person a.active {
+    color: aqua;
+}
+
+
+.dialog__send {
+    height: 120px;
+    position: relative;
+}
+
+.dialog__send__wrap {
+    display: flex;
+    height: 90px;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dialog__area {
+    height: 100%;
+    border: 1px solid rgb(163, 163, 163);
+}
+
+.dialog__area :focus {
+    outline: 1px solid rgb(104, 104, 104);
+}
