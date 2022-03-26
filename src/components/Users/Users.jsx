@@ -5,17 +5,15 @@ import UserItem from './UserItem/UserItem';
 import cl from './Users.module.css';
 
 class Users extends React.Component {
-    getUsers = () => {
-                if (this.props.oldUsers.length === 0) {
-                    axios.get('https://social-network.samuraijs.com/api/1.0/users')
-                        .then(response => this.props.setUsers(response.data.items))
-                }  
-            }
-
+    
+    componentDidMount() {
+        axios.get('https://social-network.samuraijs.com/api/1.0/users')
+            .then(response => this.props.setUsers(response.data.items))
+    }
+            
     render () {
         return (
                 <div>
-                    <Button onClick={this.getUsers}>Get Users</Button>
                     <h1 className={cl.title}>Our users</h1>
                     <div className={cl.wrap}>
                         {this.props.oldUsers.map((item, index) => <UserItem 
