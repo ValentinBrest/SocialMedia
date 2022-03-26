@@ -5,7 +5,7 @@ import UserItem from './UserItem/UserItem';
 import cl from './Users.module.css';
 
 const Users = (props) => {
-
+    
         let users = props.oldUsers.map((item, index) => <UserItem 
                                                             key={item.id} 
                                                             users={props.oldUsers[index]} 
