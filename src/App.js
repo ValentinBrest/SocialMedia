@@ -5,7 +5,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import UsersContainer from "./components/Users/UsersConrainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
+import ProfileURLMatch from "./components/Profile/ProfileContainer";
 
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
 				<Routes>
 					<Route 
 						path="profile/*" 
-						element={<ProfileContainer />} 
+						element={<ProfileURLMatch/>} 
 					/>
 					<Route 
 						path="dialogs/*" 
