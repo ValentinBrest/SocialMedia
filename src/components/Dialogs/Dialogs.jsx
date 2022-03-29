@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
 import Button from '../UI/Button/Button';
 import Textarea from '../UI/Textarea/Textarea';
 import cl from './Dialogs.module.css'
@@ -21,7 +20,6 @@ const Dialogs = (props) => {
         props.updateNewMesssageCreator(text)
         
     }
-    if(!props.isAuth) return  <Navigate to="/login"/>
 
     return (
         <div className={cl.dialogs}>
