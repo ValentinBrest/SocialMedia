@@ -10,7 +10,6 @@ const Users = (props) => {
                                                             users={props.oldUsers[index]} 
                                                             follow={props.follow}  
                                                             unfollow={props.unfollow}
-                                                            toggleFollow={props.toggleFollowingProgress} 
                                                             followingProgress={props.followingProgress}
                                                             />
                                                         ) 

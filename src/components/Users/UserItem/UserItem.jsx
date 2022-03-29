@@ -7,27 +7,27 @@ import cl from './UserItem.module.css'
 
 
 const UserItem = (props) => {
-    // debugger
     const changeFollow = () => {
         if (props.users.followed) {
-            props.toggleFollow(true, props.users.id)
-            userAPI.unfollow(props.users.id)
-            .then(data => {
-                if (data.resultCode == 0) {
-                    props.unfollow(props.users.id) 
-                }
-                props.toggleFollow(false, props.users.id)
-            });
+            props.unfollow( props.users.id)
+
+            // userAPI.unfollow(props.users.id)
+            // .then(data => {
+            //     if (data.resultCode == 0) {
+            //         props.unfollow(props.users.id) 
+            //     }
+            //     props.toggleFollow(false, props.users.id)
+            // });
             
         } else {
-            props.toggleFollow(true, props.users.id)
-            userAPI.follow(props.users.id)
-            .then(data => {
-                if (data.resultCode == 0) {
-                    props.follow(props.users.id)
-                }
-                props.toggleFollow(false, props.users.id)
-            });
+            props.follow(props.users.id)
+            // userAPI.follow(props.users.id)
+            // .then(data => {
+            //     if (data.resultCode == 0) {
+            //         props.follow(props.users.id)
+            //     }
+            //     props.toggleFollow(false, props.users.id)
+            // });
         }
         
     }
