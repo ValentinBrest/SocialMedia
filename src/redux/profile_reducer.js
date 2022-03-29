@@ -52,10 +52,11 @@ export const updateNewPostCreator = (text) => ({
     newText: text
 })
 
-export const setUserProfile = (profile) => ({
+const setUserProfile = (profile) => ({
     type: SET_USER_PROFILE, 
     profile
 })
+
 
 export const getProfile = (userId) => {
     return (dispatch) => {

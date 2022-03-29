@@ -8,12 +8,7 @@ import Profile from './Profile';
 class ProfileContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.match? this.props.match.params.userId: 2 ;
-        this.props.getProfile(userId)
-        // userAPI.getProfile(userId)
-        //     .then(response => {
-        //         this.props.setUserProfile(response.data)
-        //     });
-            
+        this.props.getProfile(userId)     
     }
     render() {
         return (

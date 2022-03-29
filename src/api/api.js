@@ -24,7 +24,10 @@ export const userAPI = {
             .then(response => response.data)
     },
     getProfile(userId) {
-        return instance.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
+        return instance.get(`profile/${userId}`)
+    },
+    auth () {
+        return instance.get(`auth/me`)
     }
 }
 
