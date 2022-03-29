@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withAuthREdirect } from '../../hoc/withAuthRedirect';
 import { follow, setCurrentPage, setTotalUsersCount, unfollow, toggleFollowingProgress, getUsers } from '../../redux/users_reducer';
 import Users from './Users';
 
@@ -33,7 +34,6 @@ class UsersСontainer extends React.Component {
     }
 }
 
-
 const mapStateToProps = (state) => {
     return {
         oldUsers: state.usersPage.users,
@@ -46,13 +46,12 @@ const mapStateToProps = (state) => {
     
 }
 
-const UsersConrainer = connect(mapStateToProps, {
+export default withAuthREdirect(connect(mapStateToProps, {
     follow,
     unfollow,
     setCurrentPage,
     setTotalUsersCount,
     toggleFollowingProgress,
     getUsers
-})(UsersСontainer)
+})(UsersСontainer))
 
-export default UsersConrainer;
