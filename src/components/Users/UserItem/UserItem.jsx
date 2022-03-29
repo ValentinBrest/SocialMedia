@@ -7,23 +7,26 @@ import cl from './UserItem.module.css'
 
 
 const UserItem = (props) => {
+    // debugger
     const changeFollow = () => {
         if (props.users.followed) {
-            
+            props.toggleFollow(true, props.users.id)
             userAPI.unfollow(props.users.id)
             .then(data => {
                 if (data.resultCode == 0) {
                     props.unfollow(props.users.id) 
                 }
+                props.toggleFollow(false, props.users.id)
             });
             
         } else {
-            
+            props.toggleFollow(true, props.users.id)
             userAPI.follow(props.users.id)
             .then(data => {
                 if (data.resultCode == 0) {
                     props.follow(props.users.id)
                 }
+                props.toggleFollow(false, props.users.id)
             });
         }
         
@@ -37,7 +40,7 @@ const UserItem = (props) => {
                                 ? 'https://prepsec.org/wp-content/uploads/2017/09/unknown-person-icon-Image-from.png'
                                 : props.users.phtos.small} alt="photo user" className={cl.img} />
                 </NavLink>
-                <Button className={cl.buttonUser} onClick={changeFollow}>{props.users.followed ? 'Unfollow': 'Follow'}</Button>
+                <Button disabled={props.followingProgress.some(id => id === props.users.id)} className={cl.buttonUser} onClick={changeFollow}>{props.users.followed ? 'Unfollow': 'Follow'}</Button>
             </div>
             <div className={cl.box_right}>
                 <div className={cl.about}>

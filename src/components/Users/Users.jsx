@@ -5,12 +5,14 @@ import UserItem from './UserItem/UserItem';
 import cl from './Users.module.css';
 
 const Users = (props) => {
-    
         let users = props.oldUsers.map((item, index) => <UserItem 
                                                             key={item.id} 
                                                             users={props.oldUsers[index]} 
                                                             follow={props.follow}  
-                                                            unfollow={props.unfollow} />
+                                                            unfollow={props.unfollow}
+                                                            toggleFollow={props.toggleFollowingProgress} 
+                                                            followingProgress={props.followingProgress}
+                                                            />
                                                         ) 
         let pageCount = Math.ceil((props.totalUsersCount > 100 ? props.totalUsersCount/200: props.totalUsersCount)/ props.pageSize)
         
