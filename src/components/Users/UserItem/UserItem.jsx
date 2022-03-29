@@ -7,6 +7,7 @@ import cl from './UserItem.module.css'
 
 
 const UserItem = (props) => {
+    debugger
     const changeFollow = () => {
         if (props.users.followed) {
             props.unfollow( props.users.id)
@@ -22,7 +23,7 @@ const UserItem = (props) => {
                 <NavLink to={'/profile/' + props.users.id}>
                     <img src={props.users.photos.small == null
                                 ? 'https://prepsec.org/wp-content/uploads/2017/09/unknown-person-icon-Image-from.png'
-                                : props.users.phtos.small} alt="photo user" className={cl.img} />
+                                : props.users.photos.small} alt="photo user" className={cl.img} />
                 </NavLink>
                 <Button disabled={props.followingProgress.some(id => id === props.users.id)} className={cl.buttonUser} onClick={changeFollow}>{props.users.followed ? 'Unfollow': 'Follow'}</Button>
             </div>

@@ -6,6 +6,7 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 
 const Profile = (props) => {
+    
     return (
         <main className={cl.content}>
             <div className={cl.content__wrap}>
