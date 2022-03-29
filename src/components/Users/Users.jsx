@@ -13,7 +13,7 @@ const Users = (props) => {
                                                             followingProgress={props.followingProgress}
                                                             />
                                                         ) 
-        let pageCount = Math.ceil((props.totalUsersCount > 100 ? props.totalUsersCount/200: props.totalUsersCount)/ props.pageSize)
+        let pageCount = Math.ceil((props.totalUsersCount > 100 ? props.totalUsersCount/250: props.totalUsersCount)/ props.pageSize)
         
         let pages = []
         for (let i = 1 ; i <= pageCount; i++){

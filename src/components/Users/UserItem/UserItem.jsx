@@ -10,24 +10,8 @@ const UserItem = (props) => {
     const changeFollow = () => {
         if (props.users.followed) {
             props.unfollow( props.users.id)
-
-            // userAPI.unfollow(props.users.id)
-            // .then(data => {
-            //     if (data.resultCode == 0) {
-            //         props.unfollow(props.users.id) 
-            //     }
-            //     props.toggleFollow(false, props.users.id)
-            // });
-            
         } else {
             props.follow(props.users.id)
-            // userAPI.follow(props.users.id)
-            // .then(data => {
-            //     if (data.resultCode == 0) {
-            //         props.follow(props.users.id)
-            //     }
-            //     props.toggleFollow(false, props.users.id)
-            // });
         }
         
     }

@@ -1,35 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { follow, setCurrentPage, setTotalUsersCount, setUsers, unfollow, toggleIsFetching, toggleFollowingProgress, getUsers } from '../../redux/users_reducer';
-import * as axios from 'axios';
+import { follow, setCurrentPage, setTotalUsersCount, unfollow, toggleFollowingProgress, getUsers } from '../../redux/users_reducer';
 import Users from './Users';
-import { userAPI } from '../../api/api';
 
 
 class UsersСontainer extends React.Component {
     
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize)
-        // this.props.toggleIsFetching(true)
-
-        // userAPI.getUsers(this.props.currentPage, this.props.pageSize)
-        //     .then(data => {
-        //         this.props.toggleIsFetching(false)
-        //         this.props.setUsers(data.items);
-        //         this.props.setTotalUsersCount(data.totalCount)
-        //     });
 
         }
         
     changePage = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
         this.props.getUsers(pageNumber, this.props.pageSize)
-        // this.props.toggleIsFetching(true)
-        // userAPI.getUsers(pageNumber, this.props.pageSize)
-        //     .then(data => {
-        //         this.props.toggleIsFetching(false)
-        //         this.props.setUsers(data.items)
-        //     })
     }
     
     render () {
