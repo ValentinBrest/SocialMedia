@@ -1,15 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { withAuthREdirect } from '../../hoc/withAuthRedirect';
 import { follow, setCurrentPage, setTotalUsersCount, unfollow, toggleFollowingProgress, getUsers } from '../../redux/users_reducer';
 import Users from './Users';
 
 
 class UsersСontainer extends React.Component {
-    
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize)
-
         }
         
     changePage = (pageNumber) => {
@@ -46,12 +45,15 @@ const mapStateToProps = (state) => {
     
 }
 
-export default withAuthREdirect(connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setCurrentPage,
-    setTotalUsersCount,
-    toggleFollowingProgress,
-    getUsers
-})(UsersСontainer))
+export default compose(
+    withAuthREdirect,
+    connect(mapStateToProps, {
+        follow,
+        unfollow,
+        setCurrentPage,
+        setTotalUsersCount,
+        toggleFollowingProgress,
+        getUsers
+    })
+)(UsersСontainer)
 
