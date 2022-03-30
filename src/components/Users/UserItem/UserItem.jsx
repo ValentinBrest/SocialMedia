@@ -7,7 +7,6 @@ import cl from './UserItem.module.css'
 
 
 const UserItem = (props) => {
-    debugger
     const changeFollow = () => {
         if (props.users.followed) {
             props.unfollow( props.users.id)
