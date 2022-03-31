@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Preloader from '../../UI/Preloader/Preloader';
 import cl from './../Profile.module.css'
-import ProfileStatus from './ProfileStatus';
+import ProfileStatus from './ProfileStatus/ProfileStatus';
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
