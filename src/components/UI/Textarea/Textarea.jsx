@@ -1,17 +1,15 @@
 import React from 'react';
 import cl from './Textarea.module.css'
 
-const Textarea = React.forwardRef((props, ref) => {
+
+const Textarea = ({input, meta, ...props}) => {
+    const hasError = meta.touched && meta.error;
     return (
-        <textarea 
-            onChange={props.onChange}
-            ref={ref}
-            className={`${cl.area} ${props.className}`} 
-            placeholder={props.placeholder} 
-            value={props.value}
-        >
-        </textarea>
+        <div className={cl.post}>
+            <textarea {...input} {...props} className={`${cl.textarea} ${hasError? cl.error : ''}`}/>
+            {hasError && <span className={cl.span}>{meta.error}</span>}
+        </div>  
     );
-});
+};
 
 export default Textarea;

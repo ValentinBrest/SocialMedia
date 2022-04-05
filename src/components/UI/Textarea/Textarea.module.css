@@ -1,12 +1,39 @@
-.area {
+
+ .input { 
+  border: solid 1px rgb(0, 0, 0);
+  width: 100%;
+  height: 20px;
+  padding: 0 0 0 20px;
+}
+
+ .textarea {
+    border: solid 1px rgb(0, 0, 0);
     width: 100%;
-    height: 50px;
+    height: 100px;
+    border-radius: 5px;
     resize: none;
     padding: 10px 0 0 20px;
-    border: 1px solid #242424;
-  }
+}
 
-  .area:focus {
+.error {
+  border: solid 2px rgb(179, 30, 30)
+}
+
+input:focus, 
+textarea:focus {
     outline: none;
     border: 1px solid #242424;
-  }
+}
+
+.post {
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+.span {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color:rgb(179, 30, 30)
+}
