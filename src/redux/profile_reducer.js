@@ -1,7 +1,6 @@
 import { profileAPI, userAPI } from "../api/api";
 
 const ADD_POST= "ADD-POST";
-const UPDATE_NEW_POST = 'UPDATE-NEW-POST';
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
 const SET_STATUS = 'SET_STATUS'
 
@@ -12,7 +11,6 @@ const initialState = {
         {name: 'Sonya Bezrukova', time: '00:17', date: '22.02.2021', text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, ha'},
         {name: 'Michael Shumacher', time: '22:23', date: '04.01.2022', text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, ha'}
     ],
-    newPostText: '',
     profile: null,
     status: ''
 }
@@ -25,15 +23,12 @@ const profileReducer = (state = initialState, action) => {
                 name: "Federico Felinni",
                 time: action.timePost,
                 date: action.datePost,
-                text: state.newPostText,        
+                text: action.newTextPost,        
             }
             return {
                 ...state, 
                 posts: [...state.posts, newPost], 
-                newPostText: ''
             }
-        case UPDATE_NEW_POST:  
-            return {...state, newPostText: action.newText}
 
         case SET_USER_PROFILE:  
             return {...state, profile: action.profile}
@@ -46,15 +41,11 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = (timePost, datePost) => ({
+export const addPostActionCreator = (timePost, datePost, newTextPost) => ({
     type: ADD_POST,
-    timePost: timePost, 
-    datePost: datePost
-})
-
-export const updateNewPostCreator = (text) => ({
-    type: UPDATE_NEW_POST, 
-    newText: text
+    timePost, 
+    datePost,
+    newTextPost
 })
 
 const setUserProfile = (profile) => ({

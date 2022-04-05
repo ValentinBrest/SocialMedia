@@ -1,5 +1,4 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
 
 const initialState = {
     personData: [
@@ -13,35 +12,25 @@ const initialState = {
         {talk: 'How are you doing?', me: false}, 
         {talk: 'I am okey. And you?', me: true}
     ],
-    newTextMessage : ''
 }
 
 const dialogReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
             let newMessage = {
-                talk: state.newTextMessage,
+                talk: action.newMessageBody,
                 me: true
             }
             return {
                 ...state, 
                 dialog: [...state.dialog, newMessage]
             }
-        case UPDATE_NEW_MESSAGE:
-            return {
-                ...state, 
-                newTextMessage : action.newText
-            }
         default:
             return state;
     }
 }
 
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
+export const addMessageActionCreator = (newMessageBody) => ({type: ADD_MESSAGE, newMessageBody})
  
-export const updateNewMesssageCreator = (text) => ({
-        type: UPDATE_NEW_MESSAGE, 
-        newText: text
-    })
 
 export default dialogReducer

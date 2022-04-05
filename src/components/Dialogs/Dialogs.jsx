@@ -1,7 +1,6 @@
 import React from 'react';
-import Button from '../UI/Button/Button';
-import Textarea from '../UI/Textarea/Textarea';
-import cl from './Dialogs.module.css'
+import AddMessageFormRedux from '../UI/Form/MessagesForm/MessagesForm';
+import cl from './Dialogs.module.css';
 import Messages from './Messages/Messages';
 import Persons from './Persons/Persons';
 
@@ -11,15 +10,10 @@ const Dialogs = (props) => {
     const yourMessages = props.personData.dialog.map(mes => <Messages text={mes.talk} me={mes.me}/>);
     const yourPersons =  props.personData.personData.map(item => <Persons name={item.name} id={item.id} img={item.img} key={item.id}/>)
 
-    let addMessage = () => {
-        props.addMessage()
+    let addNewMessage = (value) => {
+        props.addMessage(value.newMessageBody)
     }
 
-    let writeMessage = () => {
-        let text = newMessageElement.current.value;
-        props.updateNewMesssageCreator(text)
-        
-    }
 
     return (
         <div className={cl.dialogs}>
@@ -34,14 +28,13 @@ const Dialogs = (props) => {
                     </div>
                     
                     <div className={cl.dialog__send}>
-                        <div className={cl.dialog__send__wrap}>
-                            <Textarea 
-                                ref={newMessageElement}
-                                onChange={writeMessage} 
-                                className={cl.dialog__area} 
-                                value={props.personData.newTextMessage}/>
-                            <Button onClick={addMessage}>Send</Button>
-                        </div>
+                         <AddMessageFormRedux className={cl.dialog__area} onSubmit={addNewMessage}/>
+                        {/* <Textarea 
+                            ref={newMessageElement}
+                            onChange={writeMessage} 
+                            className={cl.dialog__area} 
+                            value={props.personData.newTextMessage}/>
+                        <Button onClick={addMessage}>Send</Button> */}
                     </div>
                 </div>
             </div>
