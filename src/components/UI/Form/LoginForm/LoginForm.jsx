@@ -9,10 +9,10 @@ const LoginForm = (props) => {
     return (
         <form className={cl.form} onSubmit={props.handleSubmit}>
             <div>
-              <Field placeholder='Login' className={cl.login} name={'login'} component="input"/>
+              <Field placeholder='Email' className={cl.login} name={'email'} component="input"/>
             </div>
             <div>
-              <Field placeholder='Password' className={cl.password} name={'password'} component="input"/>
+              <Field placeholder='Password' className={cl.password} name={'password'} type={"password"} component="input"/>
             </div>
             <div>
               <label htmlFor="rememberMe">remember me</label>
