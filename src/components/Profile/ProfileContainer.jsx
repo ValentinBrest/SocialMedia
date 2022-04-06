@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Navigate, useMatch } from 'react-router-dom';
 import { compose } from 'redux';
 import { useMatcher } from '../../hoc/useMatcher';
-import { withAuthREdirect } from '../../hoc/withAuthRedirect';
 import { getProfile, getStatus, updateStatus } from '../../redux/profile_reducer';
 import Profile from './Profile';
 
@@ -21,14 +19,12 @@ class ProfileContainer extends React.Component {
     }
 }
 
-
 let mapStateToProps = (state) => {
     return {
         profile: state.profilePage.profile,
         status: state.profilePage.status
     }
 }
-
 
 export default compose(
     connect(mapStateToProps, {getProfile, getStatus, updateStatus}),
