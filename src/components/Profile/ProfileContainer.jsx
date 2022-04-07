@@ -10,7 +10,6 @@ class ProfileContainer extends React.Component {
         let userId = this.props.match
         ? this.props.match.params.userId
         : 2 ;
-        debugger
         this.props.getProfile(userId)     
         this.props.getStatus(userId)     
     }
