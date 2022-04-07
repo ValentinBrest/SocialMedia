@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { useMatch } from 'react-router-dom';
 
-export const useMatcher = (Compnent) => {
+export const useMatcher = (Component) => {
     
     const ProfileURLMatch = (props) => {
         const match = useMatch('/profile/:userId/');
-        return <Compnent {...props} match={match} />;
+        return <Component {...props} match={match} />;
       }
     return ProfileURLMatch
 }
