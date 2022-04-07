@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Preloader from '../../UI/Preloader/Preloader';
 import cl from './../Profile.module.css'
 import ProfileStatus from './ProfileStatus/ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks';
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -14,7 +15,7 @@ const ProfileInfo = (props) => {
                     <img src={props.profile.photos.large} alt="ava" className="about__avatar" />
                     <div className={cl.about__descr}>
                         <h1>{props.profile.fullName}</h1>
-                        <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
                         <hr />
                         <div className={cl.about__text}>
                             <div className={cl.about__item}>About me: <span className={cl.status}> {props.profile.aboutMe}</span></div>
