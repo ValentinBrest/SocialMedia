@@ -1,14 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { compose } from 'redux';
 import { useMatcher } from '../../hoc/useMatcher';
 import { getProfile, getStatus, updateStatus } from '../../redux/profile_reducer';
 import Profile from './Profile';
-
-
 class ProfileContainer extends React.Component {
     componentDidMount() {
-        let userId = this.props.match? this.props.match.params.userId: 2 ;
+        let userId = this.props.match
+        ? this.props.match.params.userId
+        : 2 ;
+        debugger
         this.props.getProfile(userId)     
         this.props.getStatus(userId)     
     }
