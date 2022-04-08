@@ -8,9 +8,9 @@ import cl from './PostForm.module.css';
 
 const maxLength10 = maxLengthCreator(10)
 
-const PostForm = (props) => {
+const PostForm = ({handleSubmit}) => {
     return (
-        <form onSubmit={props.handleSubmit} className={cl.post}>
+        <form onSubmit={handleSubmit} className={cl.post}>
             <Field component={Textarea} 
                     name='newTextPost'  
                     placeholder='write something...'  

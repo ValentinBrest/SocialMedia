@@ -5,9 +5,9 @@ import Button from '../../Button/Button';
 import cl from './LoginForm.module.css';
 
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     return (
-        <form className={cl.form} onSubmit={props.handleSubmit}>
+        <form className={cl.form} onSubmit={handleSubmit}>
             <div>
               <Field placeholder='Email' className={cl.login} name={'email'} component="input"/>
             </div>
@@ -18,9 +18,7 @@ const LoginForm = (props) => {
               <label htmlFor="rememberMe">remember me</label>
               <Field type="checkbox" className={cl.checkbox} id='rememberMe' name={'rememberMe'} component="input"/> 
             </div>
-            {props.error && <div className={cl.formError}>
-                          {props.error}
-                          </div>
+            {error && <div className={cl.formError}> {error} </div>
             }
             <Button className={cl.login__button}>Login</Button>
           </form>

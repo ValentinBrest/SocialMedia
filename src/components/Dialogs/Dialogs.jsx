@@ -29,12 +29,6 @@ const Dialogs = (props) => {
                     
                     <div className={cl.dialog__send}>
                          <AddMessageFormRedux className={cl.dialog__area} onSubmit={addNewMessage}/>
-                        {/* <Textarea 
-                            ref={newMessageElement}
-                            onChange={writeMessage} 
-                            className={cl.dialog__area} 
-                            value={props.personData.newTextMessage}/>
-                        <Button onClick={addMessage}>Send</Button> */}
                     </div>
                 </div>
             </div>
