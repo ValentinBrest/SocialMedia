@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../UI/Button/Button';
+import Paginator from '../UI/Paginator/Paginator';
 import Preloader from '../UI/Preloader/Preloader';
 import UserItem from './UserItem/UserItem';
 import cl from './Users.module.css';
@@ -13,29 +14,21 @@ const Users = (props) => {
                                                             followingProgress={props.followingProgress}
                                                             />
                                                         ) 
-        let pageCount = Math.ceil((props.totalUsersCount > 100 ? props.totalUsersCount/250: props.totalUsersCount)/ props.pageSize)
-        
-        let pages = []
-        for (let i = 1 ; i <= pageCount; i++){
-            pages.push(i)
-        }
-        
         return (
                 <div>
                     <h1 className={cl.title}>Our users</h1>
-                    <div className={cl.pages}>
-                        {pages.map(p => {
-                            return <span className={`${cl.page} ${props.currentPage === p && cl.selected}`} onClick={() => {props.changePage(p)}}>{p}</span>
-                        })}
-                    </div>
+                    <Paginator totalUsersCount={props.totalUsersCount} pageSize={props.pageSize}
+                                currentPage={props.currentPage} changePage={props.changePage}
+                    />
                     <div className={cl.wrap}>
                         {props.isFetching 
                             ? <Preloader />
                             : users
                             }
-                        
-                        <Button>Show more</Button>
                     </div>
+                    <Paginator totalUsersCount={props.totalUsersCount} pageSize={props.pageSize}
+                                currentPage={props.currentPage} changePage={props.changePage}
+                    />
                 </div>
                     
                 );
